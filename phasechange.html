@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="resources/matterphaselogo.png" />
+    <title>MatterPhase</title>
+
+    <!-- Polymer Compat Polyfill -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!-- Polymer Imports -->
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="build/styles.css" />
+</head>
+<body unresolved>
+    <!--<button class="toggle-switch toggle-switch_htla">-->
+        <!--<span>toggle menu</span>-->
+    <!--</button>-->
+    <paper-shadow class="menu" z="3">
+        <!--<div class="menu">-->
+            <span class="navheader">
+                Navigation
+            </span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solid.html">Solid</a></li>
+                <li><a href="liquid.html">Liquid</a></li>
+                <li><a href="gas.html">Gas</a></li>
+                <li><a href="plasma.html">Plasma</a></li>
+                <li><a href="phasechange.html">Phase Change</a></li>
+            </ul>
+        <!--</div>-->
+    </paper-shadow>
+    <div class="menuclose"></div>
+    <paper-shadow class="nav" z="1" animated>
+        <!--<nav>-->
+            <paper-icon-button icon="menu" id="menubtn"></paper-icon-button>
+        <!--</nav>-->
+    </paper-shadow>
+    <header>
+        <a href="index.html" class="pagetitle">MatterPhase Inc.</a>
+    </header>
+    <main>
+        <paper-shadow class="content" z="1" animated>
+            <div class="cardtitle">
+                Phase Changes
+            </div>
+            <div class="cardbody">
+                <img id="phasechangediagram" src="resources/phasechangediagram.svg" />
+                <style>
+                    #phasechangediagram {
+                        width: 75%;
+                        height: auto;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                </style>
+            </div>
+        </paper-shadow>
+        <paper-shadow class="content" z="1">
+            <div class="cardtitle">
+                Freezing / Melting
+            </div>
+            <div class="cardbody">
+                Melting is the process of a change in phase from a solid to a liquid.
+                This occurs when there is enough energy absorbed by the solid that its
+                molecular bonds loosen and its rigid structure broken apart, allowing
+                the molecules to flow over each other to fill its container. Freezing
+                is the opposite, where enough heat is taken away from a liquid that the
+                molecular bonds become strong enough to form rigid structures.
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="cardtitle">
+                Vaporization/Condensation
+            </div>
+            <div class="cardbody">
+                Vaporization is the process of a change in phase from a liquid to a gas.
+                This occurs when there is enough energy absorbed by the liquid that its
+                molecular bonds are broken almost completely which allows the molecules
+                to float freely and the gas to expand and fill its container. The opposite
+                of this process is Condensation where a gas loses enough molecular energy
+                to change phase into a liquid.
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="cardtitle">
+                Deposition/Sublimation
+            </div>
+            <div class="cardbody">
+                Deposition is the process of a change in phase from a gas directly to a solid.
+                This process skips liquid form and goes straight to gas. Deposition can happen
+                with certain materials at certain pressures and temperatures. Sublimation is
+                the opposite process where a solid changes phase directly to a gas.
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="cardtitle">
+                Ionization/Recombination
+            </div>
+            <div class="cardbody">
+                Ioniziation is the process of a change in phase from a gas to a plasma. This
+                process happens with large amounts of molecular energy breaking apart the
+                electrons from the atoms. A plasma is essentially a bunch of nuclei floating
+                in a soup of electrons.
+            </div>
+        </paper-shadow>
+    </main>
+    <script src="resources/main.js"></script>
+    <!--<script src="resources/menuicon.js"></script>-->
+</body>
+</html>

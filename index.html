@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="resources/matterphaselogo.png" />
+    <title>MatterPhase</title>
+
+    <!-- Polymer Compat Polyfill -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!-- Polymer Imports -->
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="build/styles.css" />
+</head>
+<body unresolved>
+    <!--<button class="toggle-switch toggle-switch_htla">-->
+        <!--<span>toggle menu</span>-->
+    <!--</button>-->
+    <paper-shadow class="menu" z="3">
+        <!--<div class="menu">-->
+            <span class="navheader">
+                Navigation
+            </span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solid.html">Solid</a></li>
+                <li><a href="liquid.html">Liquid</a></li>
+                <li><a href="gas.html">Gas</a></li>
+                <li><a href="plasma.html">Plasma</a></li>
+                <li><a href="phasechange.html">Phase Change</a></li>
+            </ul>
+        <!--</div>-->
+    </paper-shadow>
+    <div class="menuclose"></div>
+    <paper-shadow class="nav" z="1" animated>
+        <!--<nav>-->
+            <paper-icon-button icon="menu" id="menubtn"></paper-icon-button>
+        <!--</nav>-->
+    </paper-shadow>
+    <header>
+        <a href="index.html" class="pagetitle">MatterPhase Inc.</a>
+    </header>
+    <main>
+        <paper-shadow class="content" z="1">
+            <div class="cardtitle">
+                <img id="logogogo" src="resources/matterphaselogo.png" />
+                <span id="mainwelcome">Welcome</span>
+                <style>
+                    #logogogo {
+                        height: 64px;
+                        width: auto;
+                        margin: auto 0;
+                        position: relative;
+                        top: 16px;
+                    }
+                    #mainwelcome {
+                        line-height: 64px;
+                    }
+                </style>
+            </div>
+            <div class="cardbody">
+                Welcome to MatterPhase.org! Here you can see examples of the 4 phases of
+                matter as well as an explanation of how matter changes phase. To navigate
+                the website click the "hamburger" icon in the upper left corner of the
+                webpage to get a list of the different pages you can navigate to. Remember,
+                Phase Matters.
+            </div>
+        </paper-shadow>
+    </main>
+    <script src="resources/main.js"></script>
+    <!--<script src="resources/menuicon.js"></script>-->
+</body>
+</html>

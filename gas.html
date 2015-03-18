@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="resources/matterphaselogo.png" />
+    <title>MatterPhase</title>
+
+    <!-- Polymer Compat Polyfill -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <!-- Polymer Imports -->
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
+    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="build/styles.css" />
+
+    <!-- Shaders for DotsEngine -->
+    <script id="shader-vs" type="x-shader/x-vertex">
+        attribute vec2 aVertexPosition;
+        uniform vec2 uResolution;
+
+        void main() {
+            vec2 zeroToOne = aVertexPosition / uResolution;
+            vec2 zeroToTwo = zeroToOne * 2.0;
+            vec2 clipSpace = zeroToTwo - 1.0;
+
+            gl_PointSize = 2.0;
+            gl_Position = vec4(clipSpace * vec2(1, -1), 0, 1);
+        }
+    </script>
+    <script id="shader-fs" type="x-shader/x-fragment">
+        void main(void) {
+            gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+        }
+    </script>
+</head>
+<body unresolved>
+    <!--<button class="toggle-switch toggle-switch_htla">-->
+        <!--<span>toggle menu</span>-->
+    <!--</button>-->
+    <paper-shadow class="menu" z="3">
+        <!--<div class="menu">-->
+            <span class="navheader">
+                Navigation
+            </span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solid.html">Solid</a></li>
+                <li><a href="liquid.html">Liquid</a></li>
+                <li><a href="gas.html">Gas</a></li>
+                <li><a href="plasma.html">Plasma</a></li>
+                <li><a href="phasechange.html">Phase Change</a></li>
+            </ul>
+        <!--</div>-->
+    </paper-shadow>
+    <div class="menuclose"></div>
+    <paper-shadow class="nav" z="1" animated>
+        <!--<nav>-->
+            <paper-icon-button icon="menu" id="menubtn"></paper-icon-button>
+        <!--</nav>-->
+    </paper-shadow>
+    <header>
+        <a href="index.html" class="pagetitle">MatterPhase Inc.</a>
+    </header>
+    <main>
+        <paper-shadow class="content" z="1" >
+            <div class="cardtitle">
+                Gas
+            </div>
+            <div class="cardbody">
+                <canvas id="canvas-vp"></canvas>
+                <style>
+                    #canvas-vp {
+                        margin: 0 auto;
+                        width: 640px;
+                        height: 480px;
+                        display: block;
+                    }
+                </style>
+
+                <br />
+
+                The gaseous phase of matter as demonstrated above is a phase
+                of matter where the molecules have a larger amount of energy
+                than the other phases of matter, as a result of the higher amount
+                of energy in these molecules, they are very loosely bound together
+                and expand to fill the container they are in.
+            </div>
+        </paper-shadow>
+    </main>
+    <script src="resources/main.js"></script>
+    <script src="resources/DotsEngine.js"></script>
+    <script src="resources/gasSimulation.js"></script>
+    <!--<script src="resources/menuicon.js"></script>-->
+</body>
+</html>

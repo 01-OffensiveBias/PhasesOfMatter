@@ -1,0 +1,219 @@
+@import url(../resources/reset.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,700);
+
+@primaryc: #FF9800; // 500 Orange
+@primarydark: #F57C00; // 700 Orange
+@accentc: #219653; // 500 Blue
+@offblack: #212121; // 900 Grey
+@offwhite: #FAFAFA; // 50 Grey
+
+// Wasn't actually useful
+//@button-width: 100px;
+//@button-height: 100px;
+//@bar-thickness: 8px;
+//@button-pad: 18px;
+//@anim-time: 300ms;
+//
+//body {
+//  background: @offwhite;
+//}
+//
+//.toggle-switch {
+//  display: block;
+//  position: relative;
+//  overflow: hidden;
+//  margin: 0;
+//  padding: 0;
+//  width: @button-width;
+//  height: @button-height;
+//  font-size: 0;
+//  text-indent: -9999px;
+//  -webkit-appearance: none;
+//  appearance: none;
+//  box-shadow: none;
+//  border: none;
+//  cursor: pointer;
+//
+//  &:focus {
+//    outline: none;
+//  }
+//
+//  span {
+//    display: block;
+//    position: absolute;
+//    top: (@button-height / 2) - (@bar-thickness / 2);
+//    left: @button-pad;
+//    right: @button-pad;
+//    height: @bar-thickness;
+//    background: rgb(255, 255, 255);
+//
+//    &::before, &::after {
+//      position: absolute;
+//      display: block;
+//      left: 0;
+//      width: 100%;
+//      height: @bar-thickness;
+//      background-color: white;
+//      content: "";
+//    }
+//
+//    &::before {
+//      top: -((@button-height / 2) - (@bar-thickness / 2) - @button-pad);
+//    }
+//
+//    &::after {
+//      bottom: -((@button-height / 2) - (@bar-thickness / 2) - @button-pad);
+//    }
+//  }
+//}
+//
+//.toggle-switch_htla {
+//  span {
+//    transition: transform @anim-time;
+//
+//    &::before {
+//      transform-origin: top right;
+//      transition: transform @anim-time, width @anim-time, top @anim-time;
+//    }
+//
+//    &::after {
+//      transform-origin: bottom right;
+//      transition: transform @anim-time, width @anim-time, bottom @anim-time;
+//    }
+//  }
+//
+//  &.active span {
+//    transform: rotate(180deg);
+//
+//    &::before, &::after {
+//      width: 66%;
+//    }
+//
+//    &::before {
+//      top: 0;
+//      transform: translateX(@button-width * (1/3) - @button-pad + @bar-thickness + 3px) translateY(@bar-thickness / 2) rotate(45deg);
+//    }
+//
+//    &::after {
+//      bottom: 0;
+//      transform: translateX(@button-width * (1/3) - @button-pad + @bar-thickness + 3px) translateY(-@bar-thickness / 2) rotate(-45deg);
+//    }
+//  }
+//}
+
+body {
+  font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+.menu {
+  @menu-width: 30%;
+
+  position: fixed;
+  height: 100%;
+  width: @menu-width;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform cubic-bezier(.25,.1,.25,1) 300ms;
+  background: white;
+  z-index: 99999;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .navheader {
+    padding: 2% 5%;
+    width: 90%;
+    display: block;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  ul {
+    padding: 2% 0 0 0;
+    li a {
+        font-size: 24px;
+        padding: 3% 5%;
+        display: block;
+        width: 90%;
+        text-decoration: none;
+        color: @offblack;
+        transition: background 300ms;
+
+        &:link {
+          background: transparent;
+        }
+
+        &:hover {
+          background: fade(@offblack, 15%);
+        }
+    }
+  }
+}
+
+.menuclose {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  display: none;
+  z-index: 99998;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: @primarydark;
+  padding: 5px 1%;
+}
+
+header {
+  width: 100%;
+  height: 50%;
+  position: fixed;
+  background: @primaryc;
+  display: inline-flex;
+  justify-content: flex-start;
+
+  .pagetitle {
+    position: fixed;
+    bottom: 52%;
+    left: 2%;
+    font-size: 56px;
+    color: @offblack;
+    transition: opacity 300ms;
+    text-decoration: none;
+  }
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  padding: 50vh 0 0 0;
+
+  .content {
+    max-width: 1000px;
+    padding: 3%;
+    background: white;
+    margin: 5% auto;
+
+    .cardtitle {
+      font-size: 28px;
+      font-weight: 600;
+      margin: -1% 0 0 0;
+      padding: 0 0 1% 0;
+    }
+
+    .cardbody {
+      line-height: 1.5em;
+      font-size: 18px;
+    }
+  }
+}
+
+#menubtn {
+  z-index: 10000
+}
